@@ -30,32 +30,6 @@ class _VerificationScreenState extends State<VerificationScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Status bar
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '5:13',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.signal_cellular_4_bar, size: 16),
-                      const SizedBox(width: 4),
-                      Icon(Icons.wifi, size: 16),
-                      const SizedBox(width: 4),
-                      Icon(Icons.battery_full, size: 16),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            
             // Header
             Padding(
               padding: const EdgeInsets.all(20.0),
@@ -82,7 +56,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 ],
               ),
             ),
-            
+
             const Text(
               'Verification',
               style: TextStyle(
@@ -91,9 +65,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 color: Colors.black,
               ),
             ),
-            
+
             const SizedBox(height: 40),
-            
+
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -108,9 +82,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         color: Colors.black,
                       ),
                     ),
-                    
+
                     const SizedBox(height: 8),
-                    
+
                     const Text(
                       'Please enter your referral code/phone number below to get a verification link',
                       style: TextStyle(
@@ -119,9 +93,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         height: 1.4,
                       ),
                     ),
-                    
+
                     const SizedBox(height: 40),
-                    
+
                     // Referral code field
                     const Text(
                       'Referral code',
@@ -131,18 +105,18 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    
+
                     const SizedBox(height: 8),
-                    
+
                     Container(
                       decoration: BoxDecoration(
-                        color: _isReferralFilled 
-                            ? const Color(0xFFF0F4FF) 
+                        color: _isReferralFilled
+                            ? const Color(0xFFF0F4FF)
                             : const Color(0xFFF9FAFB),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
-                          color: _isReferralFilled 
-                              ? const Color(0xFF4F7FFF) 
+                          color: _isReferralFilled
+                              ? const Color(0xFF4F7FFF)
                               : const Color(0xFFE5E7EB),
                         ),
                       ),
@@ -150,9 +124,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         controller: _referralController,
                         decoration: InputDecoration(
                           hintText: _isReferralFilled ? '' : 'Referral code',
-                          hintStyle: const TextStyle(
-                            color: Color(0xFF9CA3AF),
-                          ),
+                          hintStyle: const TextStyle(color: Color(0xFF9CA3AF)),
                           border: InputBorder.none,
                           contentPadding: const EdgeInsets.symmetric(
                             horizontal: 16,
@@ -161,7 +133,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         ),
                       ),
                     ),
-                    
+
                     if (_isReferralFilled) ...[
                       const SizedBox(height: 8),
                       Text(
@@ -173,9 +145,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         ),
                       ),
                     ],
-                    
+
                     const SizedBox(height: 24),
-                    
+
                     // Phone number field
                     const Text(
                       'Email or Phone number',
@@ -185,25 +157,21 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    
+
                     const SizedBox(height: 8),
-                    
+
                     Container(
                       decoration: BoxDecoration(
                         color: const Color(0xFFF9FAFB),
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(
-                          color: const Color(0xFFE5E7EB),
-                        ),
+                        border: Border.all(color: const Color(0xFFE5E7EB)),
                       ),
                       child: TextField(
                         controller: _phoneController,
                         keyboardType: TextInputType.emailAddress,
                         decoration: const InputDecoration(
                           hintText: 'Email or Phone number',
-                          hintStyle: TextStyle(
-                            color: Color(0xFF9CA3AF),
-                          ),
+                          hintStyle: TextStyle(color: Color(0xFF9CA3AF)),
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(
                             horizontal: 16,
@@ -212,9 +180,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         ),
                       ),
                     ),
-                    
+
                     const Spacer(),
-                    
+
                     // Send verification button
                     SizedBox(
                       width: double.infinity,
@@ -224,7 +192,8 @@ class _VerificationScreenState extends State<VerificationScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const OTPVerificationScreen(),
+                              builder: (context) =>
+                                  const OTPVerificationScreen(),
                             ),
                           );
                         },
@@ -245,9 +214,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         ),
                       ),
                     ),
-                    
+
                     const SizedBox(height: 16),
-                    
+
                     Center(
                       child: TextButton(
                         onPressed: () {},
@@ -261,7 +230,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         ),
                       ),
                     ),
-                    
+
                     const SizedBox(height: 20),
                   ],
                 ),
