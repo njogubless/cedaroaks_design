@@ -177,14 +177,14 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
       child: Column(
         children: [
-          const SizedBox(height: 60),
+          // Reduced top spacing
+          const SizedBox(height: 20),
           
-          // Abstract background design
+          // Abstract background design - Made flexible
           Expanded(
-            flex: 3,
             child: Container(
               width: double.infinity,
               margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -204,8 +204,8 @@ class OnboardingPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            const Color(0xFF4F7FFF).withOpacity(0.15),
-                            const Color(0xFF8FA4FF).withOpacity(0.1),
+                            const Color(0xFF4F7FFF).withValues(alpha: 0.15),
+                            const Color(0xFF8FA4FF).withValues(alpha: 0.1),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(60),
@@ -221,8 +221,8 @@ class OnboardingPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            const Color(0xFF00D4AA).withOpacity(0.15),
-                            const Color(0xFF7DD3FC).withOpacity(0.1),
+                            const Color(0xFF00D4AA).withValues(alpha: 0.15),
+                            const Color(0xFF7DD3FC).withValues(alpha: 0.1),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(50),
@@ -238,8 +238,8 @@ class OnboardingPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            const Color(0xFFE879F9).withOpacity(0.15),
-                            const Color(0xFFC084FC).withOpacity(0.1),
+                            const Color(0xFFE879F9).withValues(alpha: 0.15),
+                            const Color(0xFFC084FC).withValues(alpha: 0.1),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(40),
@@ -255,8 +255,8 @@ class OnboardingPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            const Color(0xFF4F7FFF).withOpacity(0.2),
-                            const Color(0xFF8FA4FF).withOpacity(0.1),
+                            const Color(0xFF4F7FFF).withValues(alpha: 0.2),
+                            const Color(0xFF8FA4FF).withValues(alpha: 0.1),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(30),
@@ -273,42 +273,48 @@ class OnboardingPage extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 40),
+          const SizedBox(height: 30),
 
-          // Text content
-          Expanded(
-            flex: 1,
+          // Text content - Made more compact and flexible
+          Flexible(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   item.title,
                   style: const TextStyle(
-                    fontSize: 28,
+                    fontSize: 26, // Slightly reduced
                     fontWeight: FontWeight.w700,
                     color: Color(0xFF1F2937),
                     height: 1.2,
                     letterSpacing: -0.5,
                   ),
                   textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
 
-                const SizedBox(height: 16),
+                const SizedBox(height: 12), // Reduced spacing
 
                 Text(
                   item.description,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 15, // Slightly reduced
                     fontWeight: FontWeight.w400,
                     color: Color(0xFF6B7280),
-                    height: 1.5,
+                    height: 1.4,
                     letterSpacing: 0.1,
                   ),
                   textAlign: TextAlign.center,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),
           ),
+          
+          const SizedBox(height: 20), // Bottom spacing
         ],
       ),
     );
@@ -321,7 +327,7 @@ class AbstractPatternPainter extends CustomPainter {
     final paint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2
-      ..color = const Color(0xFF4F7FFF).withOpacity(0.1);
+      ..color = const Color(0xFF4F7FFF).withValues(alpha: 0.1);
 
     final path = Path();
     
