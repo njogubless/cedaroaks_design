@@ -1,4 +1,3 @@
-
 import 'package:cedaroaks_design/screens/sucess_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,7 +10,10 @@ class OTPVerificationScreen extends StatefulWidget {
 }
 
 class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
-  final List<TextEditingController> _controllers = List.generate(6, (_) => TextEditingController());
+  final List<TextEditingController> _controllers = List.generate(
+    6,
+    (_) => TextEditingController(),
+  );
   final List<FocusNode> _focusNodes = List.generate(6, (_) => FocusNode());
 
   @override
@@ -29,9 +31,11 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
     if (value.isNotEmpty && index < 5) {
       _focusNodes[index + 1].requestFocus();
     }
-    
+
     // Check if all fields are filled
-    bool allFilled = _controllers.every((controller) => controller.text.isNotEmpty);
+    bool allFilled = _controllers.every(
+      (controller) => controller.text.isNotEmpty,
+    );
     if (allFilled) {
       // Auto-verify when all digits are entered
       _verify();
@@ -59,32 +63,6 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Status bar
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '5:13',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.signal_cellular_4_bar, size: 16),
-                      const SizedBox(width: 4),
-                      Icon(Icons.wifi, size: 16),
-                      const SizedBox(width: 4),
-                      Icon(Icons.battery_full, size: 16),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            
             // Header
             Padding(
               padding: const EdgeInsets.all(20.0),
@@ -111,7 +89,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                 ],
               ),
             ),
-            
+
             const Text(
               'Verification',
               style: TextStyle(
@@ -120,9 +98,9 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                 color: Colors.black,
               ),
             ),
-            
+
             const SizedBox(height: 60),
-            
+
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -136,9 +114,9 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                         color: Colors.black,
                       ),
                     ),
-                    
+
                     const SizedBox(height: 16),
-                    
+
                     RichText(
                       textAlign: TextAlign.center,
                       text: const TextSpan(
@@ -148,7 +126,10 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                           height: 1.4,
                         ),
                         children: [
-                          TextSpan(text: 'Please enter the 6 digit code we sent to your mobile number '),
+                          TextSpan(
+                            text:
+                                'Please enter the 6 digit code we sent to your mobile number ',
+                          ),
                           TextSpan(
                             text: '+234913982812',
                             style: TextStyle(
@@ -159,9 +140,9 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                         ],
                       ),
                     ),
-                    
+
                     const SizedBox(height: 60),
-                    
+
                     // OTP Input Fields
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -172,9 +153,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                           decoration: BoxDecoration(
                             color: const Color(0xFFF9FAFB),
                             borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                              color: const Color(0xFFE5E7EB),
-                            ),
+                            border: Border.all(color: const Color(0xFFE5E7EB)),
                           ),
                           child: TextField(
                             controller: _controllers[index],
@@ -186,24 +165,29 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
                             ),
-                            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly,
+                            ],
                             decoration: const InputDecoration(
                               counterText: '',
                               border: InputBorder.none,
                             ),
                             onChanged: (value) => _onChanged(value, index),
                             onTap: () {
-                              _controllers[index].selection = TextSelection.fromPosition(
-                                TextPosition(offset: _controllers[index].text.length),
-                              );
+                              _controllers[index].selection =
+                                  TextSelection.fromPosition(
+                                    TextPosition(
+                                      offset: _controllers[index].text.length,
+                                    ),
+                                  );
                             },
                           ),
                         );
                       }),
                     ),
-                    
+
                     const SizedBox(height: 60),
-                    
+
                     // Verify button
                     SizedBox(
                       width: double.infinity,
@@ -227,9 +211,9 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                         ),
                       ),
                     ),
-                    
+
                     const SizedBox(height: 16),
-                    
+
                     TextButton(
                       onPressed: () {},
                       child: const Text(
@@ -241,7 +225,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                         ),
                       ),
                     ),
-                    
+
                     const SizedBox(height: 60),
                   ],
                 ),
