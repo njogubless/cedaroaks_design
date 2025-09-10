@@ -1,4 +1,4 @@
-import 'package:cedaroaks_design/screens/homepage.dart';
+import 'package:cedaroaks_design/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class SuccessScreen extends StatelessWidget {
@@ -11,32 +11,6 @@ class SuccessScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // Status bar
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '5:13',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.signal_cellular_4_bar, size: 16),
-                      const SizedBox(width: 4),
-                      Icon(Icons.wifi, size: 16),
-                      const SizedBox(width: 4),
-                      Icon(Icons.battery_full, size: 16),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(40.0),
@@ -57,9 +31,9 @@ class SuccessScreen extends StatelessWidget {
                         size: 60,
                       ),
                     ),
-                    
+
                     const SizedBox(height: 40),
-                    
+
                     const Text(
                       'Verification successful',
                       style: TextStyle(
@@ -68,9 +42,9 @@ class SuccessScreen extends StatelessWidget {
                         color: Colors.black,
                       ),
                     ),
-                    
+
                     const SizedBox(height: 16),
-                    
+
                     const Text(
                       'Click on the proceed button to complete creating your account',
                       style: TextStyle(
@@ -80,9 +54,9 @@ class SuccessScreen extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    
+
                     const SizedBox(height: 60),
-                    
+
                     // Proceed button
                     SizedBox(
                       width: double.infinity,
@@ -91,7 +65,9 @@ class SuccessScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(builder: (context) => const Homepage()),
+                            MaterialPageRoute(
+                              builder: (context) => SignUpScreen(),
+                            ),
                             (route) => false,
                           );
                         },
