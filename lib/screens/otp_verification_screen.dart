@@ -42,12 +42,6 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
     }
   }
 
-  void _onBackspace(int index) {
-    if (index > 0) {
-      _controllers[index].clear();
-      _focusNodes[index - 1].requestFocus();
-    }
-  }
 
   void _verify() {
     Navigator.push(

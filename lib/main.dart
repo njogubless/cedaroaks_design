@@ -1,4 +1,3 @@
-import 'package:cedaroaks_design/screens/signup_screen.dart';
 import 'package:cedaroaks_design/screens/onboarding_screen.dart';
 import 'package:cedaroaks_design/screens/verification_screen.dart';
 import 'package:flutter/material.dart';

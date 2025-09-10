@@ -153,7 +153,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
         ),
         SizedBox(height: 8),
-        Container(
+        SizedBox(
           height: 52,
           child: TextFormField(
             controller: controller,
@@ -218,7 +218,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
         ),
         SizedBox(height: 8),
-        Container(
+        SizedBox(
           height: 52,
           child: TextFormField(
             controller: _passwordController,
@@ -334,7 +334,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     required String text,
     required VoidCallback onPressed,
   }) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: 52,
       child: ElevatedButton(
