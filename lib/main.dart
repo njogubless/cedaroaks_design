@@ -1,5 +1,6 @@
-import 'package:cedaroaks_design/screens/homepage.dart';
+import 'package:cedaroaks_design/screens/signup_screen.dart';
 import 'package:cedaroaks_design/screens/onboarding_screen.dart';
+import 'package:cedaroaks_design/screens/verification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -53,7 +54,7 @@ class _SplashWrapperState extends State<SplashWrapper> {
       } else {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const Homepage()),
+          MaterialPageRoute(builder: (context) => const VerificationScreen()),
         );
       }
     }
