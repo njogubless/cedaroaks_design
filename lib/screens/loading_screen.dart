@@ -50,7 +50,7 @@ class _LoadingScreenState extends State<LoadingScreen>
         child: AnimatedBuilder(
           animation: _animation,
           builder: (context, child) {
-            return Container(
+            return SizedBox(
               width: 60,
               height: 60,
               child: CircularProgressIndicator(
