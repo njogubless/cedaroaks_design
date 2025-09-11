@@ -30,7 +30,6 @@ class _VerificationScreenState extends State<VerificationScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Header
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Row(
@@ -52,7 +51,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                     ),
                   ),
                   const Spacer(),
-                  const SizedBox(width: 24), // Balance for back button
+                  const SizedBox(width: 24),
                 ],
               ),
             ),
@@ -96,7 +95,6 @@ class _VerificationScreenState extends State<VerificationScreen> {
 
                     const SizedBox(height: 40),
 
-                    // Referral code field
                     const Text(
                       'Referral code',
                       style: TextStyle(
@@ -148,7 +146,6 @@ class _VerificationScreenState extends State<VerificationScreen> {
 
                     const SizedBox(height: 24),
 
-                    // Phone number field
                     const Text(
                       'Email or Phone number',
                       style: TextStyle(
@@ -183,7 +180,6 @@ class _VerificationScreenState extends State<VerificationScreen> {
 
                     const Spacer(),
 
-                    // Send verification button
                     SizedBox(
                       width: double.infinity,
                       height: 50,

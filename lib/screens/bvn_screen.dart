@@ -1,4 +1,3 @@
-// BVN Screen
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -41,10 +40,7 @@ class _BVNScreenState extends State<BvnScreen> {
         centerTitle: true,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(1),
-          child: Container(
-            height: 1,
-            color: Color(0xFFF0F0F0),
-          ),
+          child: Container(height: 1, color: Color(0xFFF0F0F0)),
         ),
       ),
       body: Padding(
@@ -109,18 +105,30 @@ class _BVNScreenState extends State<BvnScreen> {
                         ),
                         filled: true,
                         fillColor: Colors.white,
-                        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 16,
+                        ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(color: Color(0xFFE0E0E0), width: 1.5),
+                          borderSide: BorderSide(
+                            color: Color(0xFFE0E0E0),
+                            width: 1.5,
+                          ),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(color: Color(0xFFE0E0E0), width: 1.5),
+                          borderSide: BorderSide(
+                            color: Color(0xFFE0E0E0),
+                            width: 1.5,
+                          ),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(color: Color(0xFF4F7DF8), width: 1.5),
+                          borderSide: BorderSide(
+                            color: Color(0xFF4F7DF8),
+                            width: 1.5,
+                          ),
                         ),
                         errorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -148,7 +156,6 @@ class _BVNScreenState extends State<BvnScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      // Handle BVN verification
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text('BVN verification initiated'),
@@ -167,10 +174,7 @@ class _BVNScreenState extends State<BvnScreen> {
                   ),
                   child: Text(
                     'Verify BVN',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),

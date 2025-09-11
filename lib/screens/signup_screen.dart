@@ -1,7 +1,6 @@
 import 'package:cedaroaks_design/screens/bvn_screen.dart';
 import 'package:flutter/material.dart';
 
-
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
 
@@ -14,9 +13,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _firstNameController = TextEditingController(text: 'Mary');
   final _lastNameController = TextEditingController(text: 'lkott');
   final _phoneController = TextEditingController(text: '0812345652');
-  final _emailController = TextEditingController(text: 'mississippi204@gmail.com');
+  final _emailController = TextEditingController(
+    text: 'mississippi204@gmail.com',
+  );
   final _passwordController = TextEditingController(text: 'Maryyy2234*');
-  
+
   bool _obscurePassword = true;
   bool _hasMinLength = true;
   bool _hasUpperLower = true;
@@ -42,10 +43,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final password = _passwordController.text;
     setState(() {
       _hasMinLength = password.length >= 8;
-      _hasUpperLower = password.contains(RegExp(r'[a-z]')) && 
-                      password.contains(RegExp(r'[A-Z]'));
-      _hasSpecialChar = password.contains(RegExp(r'[0-9]')) && 
-                       password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+      _hasUpperLower =
+          password.contains(RegExp(r'[a-z]')) &&
+          password.contains(RegExp(r'[A-Z]'));
+      _hasSpecialChar =
+          password.contains(RegExp(r'[0-9]')) &&
+          password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
     });
   }
 
@@ -71,10 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         centerTitle: true,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(1),
-          child: Container(
-            height: 1,
-            color: Color(0xFFF0F0F0),
-          ),
+          child: Container(height: 1, color: Color(0xFFF0F0F0)),
         ),
       ),
       body: SingleChildScrollView(
@@ -161,19 +161,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
             controller: controller,
             keyboardType: keyboardType,
             obscureText: obscureText,
-            style: TextStyle(
-              fontSize: 16,
-              color: Color(0xFF1A1A1A),
-            ),
+            style: TextStyle(fontSize: 16, color: Color(0xFF1A1A1A)),
             decoration: InputDecoration(
               hintText: hintText,
-              hintStyle: TextStyle(
-                color: Color(0xFF999999),
-                fontSize: 16,
-              ),
+              hintStyle: TextStyle(color: Color(0xFF999999), fontSize: 16),
               filled: true,
               fillColor: Colors.white,
-              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              contentPadding: EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 16,
+              ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(color: Color(0xFFE0E0E0), width: 1.5),
@@ -225,19 +222,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: TextFormField(
             controller: _passwordController,
             obscureText: _obscurePassword,
-            style: TextStyle(
-              fontSize: 16,
-              color: Color(0xFF1A1A1A),
-            ),
+            style: TextStyle(fontSize: 16, color: Color(0xFF1A1A1A)),
             decoration: InputDecoration(
               hintText: 'Create a password',
-              hintStyle: TextStyle(
-                color: Color(0xFF999999),
-                fontSize: 16,
-              ),
+              hintStyle: TextStyle(color: Color(0xFF999999), fontSize: 16),
               filled: true,
               fillColor: Colors.white,
-              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              contentPadding: EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 16,
+              ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(color: Color(0xFFE0E0E0), width: 1.5),
@@ -310,11 +304,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             color: isValid ? Color(0xFF22C55E) : Color(0xFFE0E0E0),
           ),
           child: isValid
-              ? Icon(
-                  Icons.check,
-                  size: 10,
-                  color: Colors.white,
-                )
+              ? Icon(Icons.check, size: 10, color: Colors.white)
               : null,
         ),
         SizedBox(width: 12),
@@ -351,13 +341,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
         child: Text(
           text,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
       ),
     );
   }
 }
-

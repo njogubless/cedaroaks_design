@@ -3,7 +3,6 @@ import 'package:cedaroaks_design/screens/reg_sucess.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-// Payment Details Screen
 class PaymentDetailsScreen extends StatefulWidget {
   const PaymentDetailsScreen({super.key});
 
@@ -14,11 +13,13 @@ class PaymentDetailsScreen extends StatefulWidget {
 class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController(text: 'Mary Etim lkott');
-  final _cardNumberController = TextEditingController(text: '4173 1234 5106 0922');
+  final _cardNumberController = TextEditingController(
+    text: '4173 1234 5106 0922',
+  );
   final _expiryController = TextEditingController(text: '01/26');
   final _cvvController = TextEditingController(text: '123');
   final _billingController = TextEditingController(text: 'marykayla@gmail.com');
-  
+
   bool _rememberCard = false;
   bool _isLoading = false;
 
@@ -33,9 +34,8 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
   }
 
   String _formatCardNumber(String value) {
-    // Remove all spaces
     value = value.replaceAll(' ', '');
-    // Add space every 4 characters
+
     String formatted = '';
     for (int i = 0; i < value.length; i++) {
       if (i > 0 && i % 4 == 0) {
@@ -47,7 +47,6 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
   }
 
   String _formatExpiry(String value) {
-    // Remove all non-digits
     value = value.replaceAll(RegExp(r'\D'), '');
     if (value.length >= 2) {
       value = '${value.substring(0, 2)}/${value.substring(2)}';
@@ -146,20 +145,17 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                   ),
                 ),
                 SizedBox(height: 32),
-                
-                // Name on Card
+
                 _buildFormField(
                   label: 'Name on card',
                   controller: _nameController,
                   hintText: 'Enter name on card',
                 ),
                 SizedBox(height: 24),
-                
-                // Card Number
+
                 _buildCardNumberField(),
                 SizedBox(height: 24),
-                
-                // Expiry Date and CVV Row
+
                 Row(
                   children: [
                     Expanded(
@@ -198,8 +194,7 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                   ],
                 ),
                 SizedBox(height: 24),
-                
-                // Remember Card Checkbox
+
                 Row(
                   children: [
                     SizedBox(
@@ -221,16 +216,12 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                     SizedBox(width: 12),
                     Text(
                       'Remember this card for monthly auto charges',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFF666666),
-                      ),
+                      style: TextStyle(fontSize: 14, color: Color(0xFF666666)),
                     ),
                   ],
                 ),
                 SizedBox(height: 24),
-                
-                // Billing Address
+
                 _buildFormField(
                   label: 'Billing Address',
                   controller: _billingController,
@@ -238,8 +229,7 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                   keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(height: 24),
-                
-                // Why Registration Fee Link
+
                 GestureDetector(
                   onTap: () {
                     _showRegistrationFeeDialog();
@@ -254,8 +244,7 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                   ),
                 ),
                 SizedBox(height: 40),
-                
-                // Proceed Button
+
                 SizedBox(
                   width: double.infinity,
                   height: 52,
@@ -321,19 +310,16 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
             controller: controller,
             keyboardType: keyboardType,
             inputFormatters: inputFormatters,
-            style: TextStyle(
-              fontSize: 16,
-              color: Color(0xFF1A1A1A),
-            ),
+            style: TextStyle(fontSize: 16, color: Color(0xFF1A1A1A)),
             decoration: InputDecoration(
               hintText: hintText,
-              hintStyle: TextStyle(
-                color: Color(0xFF999999),
-                fontSize: 16,
-              ),
+              hintStyle: TextStyle(color: Color(0xFF999999), fontSize: 16),
               filled: true,
               fillColor: Colors.white,
-              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              contentPadding: EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 16,
+              ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(color: Color(0xFFE0E0E0), width: 1.5),
@@ -389,19 +375,16 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                 );
               }),
             ],
-            style: TextStyle(
-              fontSize: 16,
-              color: Color(0xFF1A1A1A),
-            ),
+            style: TextStyle(fontSize: 16, color: Color(0xFF1A1A1A)),
             decoration: InputDecoration(
               hintText: '1234 5678 9012 3456',
-              hintStyle: TextStyle(
-                color: Color(0xFF999999),
-                fontSize: 16,
-              ),
+              hintStyle: TextStyle(color: Color(0xFF999999), fontSize: 16),
               filled: true,
               fillColor: Colors.white,
-              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              contentPadding: EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 16,
+              ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(color: Color(0xFFE0E0E0), width: 1.5),
@@ -460,20 +443,17 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
         _isLoading = true;
       });
 
-      // Navigate to loading screen
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => LoadingScreen()),
       );
 
-      // Simulate payment processing
       await Future.delayed(Duration(seconds: 3));
-      
+
       setState(() {
         _isLoading = false;
       });
 
-      // Navigate to success screen
       if (mounted) {
         Navigator.pushReplacement(
           context,
@@ -483,5 +463,3 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
     }
   }
 }
-
-

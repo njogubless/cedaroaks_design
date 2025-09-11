@@ -32,16 +32,13 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
       _focusNodes[index + 1].requestFocus();
     }
 
-    // Check if all fields are filled
     bool allFilled = _controllers.every(
       (controller) => controller.text.isNotEmpty,
     );
     if (allFilled) {
-      // Auto-verify when all digits are entered
       _verify();
     }
   }
-
 
   void _verify() {
     Navigator.push(
@@ -57,7 +54,6 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Header
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Row(
@@ -137,7 +133,6 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
 
                     const SizedBox(height: 60),
 
-                    // OTP Input Fields
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: List.generate(6, (index) {
@@ -182,7 +177,6 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
 
                     const SizedBox(height: 60),
 
-                    // Verify button
                     SizedBox(
                       width: double.infinity,
                       height: 50,

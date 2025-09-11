@@ -1,4 +1,3 @@
-// Success Screen
 import 'package:flutter/material.dart';
 
 class RegistrationSuccessScreen extends StatelessWidget {
@@ -23,11 +22,7 @@ class RegistrationSuccessScreen extends StatelessWidget {
                       color: Color(0xFF4F7DF8),
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(
-                      Icons.check,
-                      color: Colors.white,
-                      size: 40,
-                    ),
+                    child: Icon(Icons.check, color: Colors.white, size: 40),
                   ),
                   SizedBox(height: 32),
                   Text(
@@ -58,7 +53,6 @@ class RegistrationSuccessScreen extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 32),
               child: ElevatedButton(
                 onPressed: () {
-                  // Navigate to home/dashboard or pop all
                   Navigator.popUntil(context, (route) => route.isFirst);
                 },
                 style: ElevatedButton.styleFrom(
@@ -71,10 +65,7 @@ class RegistrationSuccessScreen extends StatelessWidget {
                 ),
                 child: Text(
                   'Proceed',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                 ),
               ),
             ),

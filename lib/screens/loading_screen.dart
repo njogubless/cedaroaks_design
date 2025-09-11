@@ -1,4 +1,3 @@
-// Loading Screen
 import 'package:cedaroaks_design/screens/reg_sucess.dart';
 import 'package:flutter/material.dart';
 
@@ -21,17 +20,12 @@ class _LoadingScreenState extends State<LoadingScreen>
       duration: Duration(seconds: 2),
       vsync: this,
     );
-    _animation = Tween<double>(
-      begin: 0,
-      end: 1,
-    ).animate(CurvedAnimation(
-      parent: _animationController,
-      curve: Curves.easeInOut,
-    ));
-    
+    _animation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
+    );
+
     _animationController.repeat();
-    
-    // Auto navigate to success after 3 seconds
+
     Future.delayed(Duration(seconds: 3), () {
       if (mounted) {
         Navigator.pushReplacement(

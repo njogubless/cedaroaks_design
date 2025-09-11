@@ -81,7 +81,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
 
-            // Page indicators
             Padding(
               padding: const EdgeInsets.only(bottom: 32),
               child: Row(
@@ -104,7 +103,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
 
-            // Buttons
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Column(
@@ -124,8 +122,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         shadowColor: Colors.transparent,
                       ),
                       child: Text(
-                        _currentPage == _onboardingItems.length - 1 
-                            ? 'Create an account' 
+                        _currentPage == _onboardingItems.length - 1
+                            ? 'Create an account'
                             : 'Create an account',
                         style: const TextStyle(
                           fontSize: 16,
@@ -180,10 +178,8 @@ class OnboardingPage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
       child: Column(
         children: [
-          // Reduced top spacing
           const SizedBox(height: 20),
-          
-          // Abstract background design - Made flexible
+
           Expanded(
             child: Container(
               width: double.infinity,
@@ -194,7 +190,6 @@ class OnboardingPage extends StatelessWidget {
               ),
               child: Stack(
                 children: [
-                  // Abstract curved shapes matching the design
                   Positioned(
                     top: 40,
                     left: -20,
@@ -263,7 +258,7 @@ class OnboardingPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // Add some curved lines/paths
+
                   CustomPaint(
                     size: Size.infinite,
                     painter: AbstractPatternPainter(),
@@ -275,7 +270,6 @@ class OnboardingPage extends StatelessWidget {
 
           const SizedBox(height: 30),
 
-          // Text content - Made more compact and flexible
           Flexible(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -284,7 +278,7 @@ class OnboardingPage extends StatelessWidget {
                 Text(
                   item.title,
                   style: const TextStyle(
-                    fontSize: 26, // Slightly reduced
+                    fontSize: 26,
                     fontWeight: FontWeight.w700,
                     color: Color(0xFF1F2937),
                     height: 1.2,
@@ -295,12 +289,11 @@ class OnboardingPage extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
 
-                const SizedBox(height: 12), // Reduced spacing
-
+                const SizedBox(height: 12),
                 Text(
                   item.description,
                   style: const TextStyle(
-                    fontSize: 15, // Slightly reduced
+                    fontSize: 15,
                     fontWeight: FontWeight.w400,
                     color: Color(0xFF6B7280),
                     height: 1.4,
@@ -313,8 +306,8 @@ class OnboardingPage extends StatelessWidget {
               ],
             ),
           ),
-          
-          const SizedBox(height: 20), // Bottom spacing
+
+          const SizedBox(height: 20),
         ],
       ),
     );
@@ -330,22 +323,21 @@ class AbstractPatternPainter extends CustomPainter {
       ..color = const Color(0xFF4F7FFF).withValues(alpha: 0.1);
 
     final path = Path();
-    
-    // Create some curved abstract lines
+
     path.moveTo(size.width * 0.2, size.height * 0.3);
     path.quadraticBezierTo(
-      size.width * 0.5, 
-      size.height * 0.1, 
-      size.width * 0.8, 
-      size.height * 0.4
+      size.width * 0.5,
+      size.height * 0.1,
+      size.width * 0.8,
+      size.height * 0.4,
     );
-    
+
     path.moveTo(size.width * 0.1, size.height * 0.6);
     path.quadraticBezierTo(
-      size.width * 0.4, 
-      size.height * 0.8, 
-      size.width * 0.9, 
-      size.height * 0.7
+      size.width * 0.4,
+      size.height * 0.8,
+      size.width * 0.9,
+      size.height * 0.7,
     );
 
     canvas.drawPath(path, paint);

@@ -17,7 +17,6 @@ class SuccessScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Success icon
                     Container(
                       width: 120,
                       height: 120,
@@ -57,7 +56,6 @@ class SuccessScreen extends StatelessWidget {
 
                     const SizedBox(height: 60),
 
-                    // Proceed button
                     SizedBox(
                       width: double.infinity,
                       height: 50,
