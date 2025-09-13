@@ -1,4 +1,4 @@
-import 'package:cedaroaks_design/screens/verification_screen.dart';
+import 'package:cedaroaks_design/onbaording/verification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

@@ -1,4 +1,4 @@
-import 'package:cedaroaks_design/screens/signup_screen.dart';
+import 'package:cedaroaks_design/onbaording/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class SuccessScreen extends StatelessWidget {

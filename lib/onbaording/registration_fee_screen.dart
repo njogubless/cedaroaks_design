@@ -1,5 +1,5 @@
-import 'package:cedaroaks_design/screens/loading_screen.dart';
-import 'package:cedaroaks_design/screens/reg_sucess.dart';
+import 'package:cedaroaks_design/onbaording/loading_screen.dart';
+import 'package:cedaroaks_design/onbaording/reg_sucess.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

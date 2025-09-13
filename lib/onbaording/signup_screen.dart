@@ -1,4 +1,4 @@
-import 'package:cedaroaks_design/screens/bvn_screen.dart';
+import 'package:cedaroaks_design/onbaording/bvn_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {

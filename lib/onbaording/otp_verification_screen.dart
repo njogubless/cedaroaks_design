@@ -1,4 +1,4 @@
-import 'package:cedaroaks_design/screens/sucess_screen.dart';
+import 'package:cedaroaks_design/onbaording/sucess_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

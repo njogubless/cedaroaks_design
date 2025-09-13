@@ -1,4 +1,4 @@
-import 'package:cedaroaks_design/screens/reg_sucess.dart';
+import 'package:cedaroaks_design/onbaording/reg_sucess.dart';
 import 'package:flutter/material.dart';
 
 class LoadingScreen extends StatefulWidget {

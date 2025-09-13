@@ -1,4 +1,4 @@
-import 'package:cedaroaks_design/screens/otp_verification_screen.dart';
+import 'package:cedaroaks_design/onbaording/otp_verification_screen.dart';
 import 'package:flutter/material.dart';
 
 class VerificationScreen extends StatefulWidget {
